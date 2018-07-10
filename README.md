@@ -3,7 +3,14 @@
 spring boot 1.5.3에서 2.0.3 로 변경을 위한 메모
 =======================================
 
-#1 gradle5 lombok 사용시
+여기 참조 해라.
+https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide
+
+#1 Gradle Plugin
+ build.gradle 에 추가
+ apply plugin: 'io.spring.dependency-management' // <-- add this to your build.gradle
+
+#2 gradle5 lombok 사용시
  - build를 하면 lombok 관련 deprecated 오류가 발생, gradle5 부터는 아래 형식으로 변경해야 하는 듯
 <pre><code>
 dependencies {
