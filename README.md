@@ -11,18 +11,19 @@ https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Gu
  apply plugin: 'io.spring.dependency-management' // <-- add this to your build.gradle
 
 #2 gradle5 lombok 사용시
- - build를 하면 lombok 관련 deprecated 오류가 발생, gradle5 부터는 아래 형식으로 변경해야 하는 듯
-<pre><code>
-dependencies {
-	annotationProcessor("org.projectlombok:lombok:$lombokVersion")
-	compileOnly("org.projectlombok:lombok:$lombokVersion")
-	testAnnotationProcessor("org.projectlombok:lombok:$lombokVersion")
-	testCompileOnly("org.projectlombok:lombok:$lombokVersion")
-}
-</code></pre>
+ build를 하면 lombok 관련 deprecated 오류가 발생, gradle5 부터는 아래 형식으로 변경해야 하는 듯
+ <pre><code>
+	dependencies {
+		annotationProcessor("org.projectlombok:lombok:$lombokVersion")
+		compileOnly("org.projectlombok:lombok:$lombokVersion")
+		testAnnotationProcessor("org.projectlombok:lombok:$lombokVersion")
+		testCompileOnly("org.projectlombok:lombok:$lombokVersion")
+	}
+ </code></pre>
 
-#3 jsp
-spring-boot-starter-web 에 포함된 tomcat 은 JSP 엔진을 포함하고 있지 않습니다.
--- 이걸 안했더니.... 계속 jsp가 html로 나오네... 바보
-compile('org.apache.tomcat.embed:tomcat-embed-jasper')
-	compile('javax.servlet:jstl:1.2')
+#3 WebMvcConfigurerAdapter
+ Deprecated.  as of 5.0 ####WebMvcConfigurer has default methods (made possible by a Java 8 baseline) and can be  
+ implemented directly without the need for this adapter
+ 
+ An implementation of ####WebMvcConfigurer with empty methods allowing subclasses to override only the methods
+ they're interested in.
