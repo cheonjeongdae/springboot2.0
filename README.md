@@ -20,3 +20,9 @@ dependencies {
 	testCompileOnly("org.projectlombok:lombok:$lombokVersion")
 }
 </code></pre>
+
+#3 jsp
+spring-boot-starter-web 에 포함된 tomcat 은 JSP 엔진을 포함하고 있지 않습니다.
+-- 이걸 안했더니.... 계속 jsp가 html로 나오네... 바보
+compile('org.apache.tomcat.embed:tomcat-embed-jasper')
+	compile('javax.servlet:jstl:1.2')
