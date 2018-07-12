@@ -3,9 +3,6 @@
 spring boot 1.5.3에서 2.0.3 로 변경을 위한 메모
 =======================================
 
-여기 참조 해라.
-https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide
-
 #1 Gradle Plugin
  build.gradle 에 추가
  apply plugin: 'io.spring.dependency-management' // <-- add this to your build.gradle
@@ -22,8 +19,8 @@ https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Gu
  </code></pre>
 
 #3 WebMvcConfigurerAdapter
- Deprecated.  as of 5.0 ####WebMvcConfigurer has default methods (made possible by a Java 8 baseline) and can be  
+ Deprecated.  as of 5.0 WebMvcConfigurer has default methods (made possible by a Java 8 baseline) and can be  
  implemented directly without the need for this adapter
  
- An implementation of ####WebMvcConfigurer with empty methods allowing subclasses to override only the methods
+ An implementation of WebMvcConfigurer with empty methods allowing subclasses to override only the methods
  they're interested in.
